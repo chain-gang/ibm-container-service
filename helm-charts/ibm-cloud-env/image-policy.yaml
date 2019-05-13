@@ -1,0 +1,14 @@
+#  this image policy will enable pulling of images outside of the default whitelist (ie ibm docker repo) 
+#
+#
+apiVersion: securityenforcement.admission.cloud.ibm.com/v1beta1
+kind: ImagePolicy
+metadata:
+ name: my-cluster-images-whitelist
+namespace: default
+spec:
+ repositories:
+ - name: docker.io/ibmblockchain/*
+ policy:
+ va:
+ enabled: false
